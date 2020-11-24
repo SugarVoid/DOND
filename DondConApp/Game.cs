@@ -6,6 +6,7 @@ using System.Text;
 
 namespace DOND
 {
+    // TODO: Move class to Lib 
     public class Game
     {
         private Random rnd = new Random();
