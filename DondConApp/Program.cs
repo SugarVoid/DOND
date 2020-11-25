@@ -6,46 +6,54 @@ namespace DOND
 {
     class Program
     {
+        static Game g = new Game();
+        static string choice;
+        static int choiceInt;
+
         static void Main(string[] args)
         {
 
 
-            Game g = new Game();
+            
 
             //g.PrintCases();
 
             Console.WriteLine("select a case to keep...");
 
-            string choice = Console.ReadLine();
+            choice = Console.ReadLine();
 
-            int age;
+         
             
-            if (!int.TryParse(choice, out age))
+            if (!int.TryParse(choice, out choiceInt))
             {
                 Console.WriteLine("Please enter valid input for age ! ");
                 return;
             }
 
+            Case query = g.Cases.Where(u => u.Name == choiceInt).FirstOrDefault();
 
-            Case query = g.Cases.Where(u => u.Name == age).FirstOrDefault();
-            g.SelectCase(query);
-            g.Cases.Remove(query);
+            g.PlayerSelectCase(query);
 
             g.PrintCases();
 
+            var x = g.PickCase();
+
+            Console.WriteLine( g.OpenCase(x));
+
+
+        }
+
+        private void AskCase()
+        {
             Console.WriteLine("select a case to open...");
 
             choice = Console.ReadLine();
 
-            if (!int.TryParse(choice, out age))
+            if (!int.TryParse(choice, out choiceInt))
             {
                 Console.WriteLine("Please enter valid input for age ! ");
                 return;
             }
-
-            g.OpenCase();
-
-
         }
     }
 }

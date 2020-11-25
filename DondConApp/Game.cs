@@ -6,10 +6,12 @@ using System.Text;
 
 namespace DOND
 {
-    // TODO: Move class to Lib 
+    // TODO: Move class to Lib and make static
     public class Game
     {
         private Random rnd = new Random();
+         string choice;
+         int choiceInt;
 
         public List<Case> Cases { get; private set; }
         public Case PlayersCase { get; private set; }
@@ -26,9 +28,10 @@ namespace DOND
 
         }
 
-        public void SelectCase(Case c)
+        public void PlayerSelectCase(Case c)
         {
             PlayersCase = c;
+            Cases.Remove(c);
         }
 
         public string OpenCase(Case c)
@@ -76,6 +79,23 @@ namespace DOND
             
         }
 
+        public Case PickCase()
+        {
+            Console.WriteLine("select a case to open...");
 
+            choice = Console.ReadLine();
+
+            if (!int.TryParse(choice, out choiceInt))
+            {
+                Console.WriteLine("Please enter valid input for age ! ");
+                PickCase();
+                //return;
+            }
+
+
+            return this.Cases.Where(u => u.Name == choiceInt).FirstOrDefault();
+        }
+
+        
     }
 }
