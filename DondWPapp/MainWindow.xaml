@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DondWPapp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="421">
     <Grid Background="#FF7A7777">
-        <Button x:Name="case1"  Content="Button" HorizontalAlignment="Left" Margin="445,289,0,0" VerticalAlignment="Top"/>
-        <StackPanel x:Name="sp1" Margin="27,33,703,104" Background="White">
-
-        </StackPanel>
-        <StackPanel x:Name="sp2" Margin="102,33,621,104" Background="White"/>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel x:Name="sp1" Margin="10,33,332,60" Background="White"/>
+        <StackPanel x:Name="sp2" Margin="94,33,253,60" Background="White"/>
+        <StackPanel x:Name="spDollarAmount" Background="White" Margin="319,28,26,60"/>
     </Grid>
 </Window>

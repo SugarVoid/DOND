@@ -20,10 +20,17 @@ namespace DondWPapp
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private double[] moneyOptions = new double[26]
+        {
+                1, 2, 5, 10, 25, 50, 75, 100, 200, 300, 400, 500, 750, 1000, 5000, 10000, 25000, 50000, 75000, 100000, 200000, 300000, 400000, 500000, 750000,  1000000
+        };
+
         public MainWindow()
         {
             InitializeComponent();
             SetUpButtons();
+            SetUpMoneyLabels();
         }
 
         private void SetUpButtons()
@@ -55,6 +62,20 @@ namespace DondWPapp
 
         }
 
+        private void SetUpMoneyLabels()
+        {
+            Label newLbl = new Label();
+
+
+            foreach(double x in moneyOptions)
+            {
+                //newLbl.Content = x.ToString();
+                //newLbl.Name = $"lbl_{x.ToString()}";
+                //spDollarAmount.Children.Add(newLbl);
+            }
+
+            
+        }
 
         void Button_Click(object sender, EventArgs e)
         {
