@@ -6,10 +6,12 @@
         xmlns:local="clr-namespace:DondWPapp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button x:Name="case1"  Content="Button" HorizontalAlignment="Left" Margin="139,217,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="case2" Content="Button" HorizontalAlignment="Left" Margin="230,227,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="case3" Content="Button" HorizontalAlignment="Left" Margin="332,237,0,0" VerticalAlignment="Top"/>
+    <Grid Background="#FF7A7777">
+        <Button x:Name="case1"  Content="Button" HorizontalAlignment="Left" Margin="445,289,0,0" VerticalAlignment="Top"/>
+        <StackPanel x:Name="sp1" Margin="27,33,703,104" Background="White">
+
+        </StackPanel>
+        <StackPanel x:Name="sp2" Margin="102,33,621,104" Background="White"/>
 
     </Grid>
 </Window>

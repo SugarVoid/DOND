@@ -23,18 +23,36 @@ namespace DondWPapp
         public MainWindow()
         {
             InitializeComponent();
-            case1.Click += Button_Click;
-            case2.Click += Button_Click;
-            case3.Click += Button_Click;
+            SetUpButtons();
         }
 
         private void SetUpButtons()
         {
-            for (int i = 1; i <= 26; i++)
+            Button newBtn = new Button();
+
+            void SetButtonProp(int x)
             {
-                
-                
+                newBtn = new Button();
+                newBtn.Content = x.ToString();
+                newBtn.Content = $"{x}";
+                newBtn.Margin = new Thickness(0, 2, 0, 2);
+                newBtn.Click += Button_Click;
+                newBtn.Name = $"btn_case{x}";
             }
+
+          
+            for (int i = 1; i < 14; i++)
+            {
+                SetButtonProp(i);
+                sp1.Children.Add(newBtn);
+            }
+
+            for (int i = 14; i < 27; i++)
+            {
+                SetButtonProp(i);
+                sp2.Children.Add(newBtn);
+            }
+
         }
 
 
